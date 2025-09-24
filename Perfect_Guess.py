@@ -1,23 +1,37 @@
-import random 
+import random
 
-cam = random.randint(1 , 100)
+def number_guessing_game():
+    """
+    🎮 Number Guessing Game
+    -----------------------
+    The computer picks a number between 1 and 100.
+    You try to guess it in as few attempts as possible.
+    """
+    target = random.randint(1, 100)
+    attempts = 0
+    guess = None
 
+    print("\n🎮 Welcome to the Number Guessing Game!")
+    print("I have selected a number between 1 and 100. Can you guess it?\n")
 
-guess = 0
-you = -1 
-while ( you != cam )  :
-    you = int ( input ("Guess the number : ")) 
-    if you < cam : 
-        print ( " Enter Higher number please!!! ")
-        guess += 1
+    while guess != target:
+        try:
+            guess = int(input("👉 Enter your guess: "))
+            attempts += 1
 
-      
-    elif you > cam : 
-        print ( " Enter Lower number please!!! ")
-        guess += 1
+            if guess == target:
+                print(f"\n✅ Congratulations! You guessed the correct number: {target}")
+                print(f"📊 You took {attempts} attempt(s).")
+                print("🎉 Now let your friend try!\n")
+                break
+            elif guess < target:
+                print("🔼 Try a higher number!\n")
+            else:  # guess > target
+                print("🔽 Try a lower number!\n")
 
-guess += 1
-print (f"\nCongratulation You Chose the correct number : { you } \nYou Take the {guess} guesses \nNow You Friebds Turn...")
+        except ValueError:
+            print("⚠️ Please enter a valid integer.\n")
 
+if __name__ == "__main__":
+    number_guessing_game()
 
-      
