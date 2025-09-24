@@ -21,7 +21,7 @@ def number_guessing_game():
                 break
             elif guess < target:
                 print("🔼 Try a higher number!\n")
-            else:  # guess > target
+            else:  
                 print("🔽 Try a lower number!\n")
 
         except ValueError:
