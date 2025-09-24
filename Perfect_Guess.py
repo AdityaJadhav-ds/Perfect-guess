@@ -1,12 +1,7 @@
 import random
 
 def number_guessing_game():
-    """
-    🎮 Number Guessing Game
-    -----------------------
-    The computer picks a number between 1 and 100.
-    You try to guess it in as few attempts as possible.
-    """
+    
     target = random.randint(1, 100)
     attempts = 0
     guess = None
